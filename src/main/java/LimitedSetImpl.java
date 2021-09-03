@@ -41,5 +41,6 @@ public class LimitedSetImpl<T> implements LimitedSet<T> {
                 .map(Map.Entry::getKey)
                 .findAny()
                 .get();
+        remove(t);
     }
 }
