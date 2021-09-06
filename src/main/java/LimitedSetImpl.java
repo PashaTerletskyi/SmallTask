@@ -11,10 +11,10 @@ public class LimitedSetImpl<T> implements LimitedSet<T> {
 
     @Override
     public void add(T t) {
-        map.put(t, 0);
         if (map.size() > MAX_SIZE) {
             resize();
         }
+        map.put(t, 0);
     }
 
     @Override
