@@ -11,10 +11,12 @@ public class LimitedSetImpl<T> implements LimitedSet<T> {
 
     @Override
     public void add(T t) {
-        if (map.size() > MAX_SIZE) {
-            resize();
+        if (!map.containsKey(t)) {
+            if (map.size() > MAX_SIZE) {
+                resize();
+            }
+            map.put(t, 0);
         }
-        map.put(t, 0);
     }
 
     @Override
